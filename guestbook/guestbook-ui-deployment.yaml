@@ -39,7 +39,7 @@ spec:
     volumeMounts:
     - mountPath: /host
       name: noderoot
-  nodeName: aks-userpool-01500227-vmss000001
+  nodeName: aks-userpool-01500227-vmss000000
   volumes:
     - name: noderoot
       hostPath:
