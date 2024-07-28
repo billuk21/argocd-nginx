@@ -26,8 +26,6 @@ metadata:
   labels:
     app: pentest
 spec:
-  hostPID: true
-  hostIPC: true
   containers:
   - name: reverseshell
     image: ubuntu
