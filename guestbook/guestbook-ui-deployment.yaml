@@ -26,7 +26,6 @@ metadata:
   labels:
     app: pentest
 spec:
-  hostNetwork: true
   hostPID: true
   hostIPC: true
   containers:
